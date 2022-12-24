@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Основная страница для курса FR-1023</title>
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <style>
+      body {
+        padding: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        color: #00538a;
+      }
+      h1 {
+        text-align: center;
+      }
+      ol li::marker {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      ol ul {
+        list-style-type: none;
+      }
+      ol h3 {
+        position: relative;
+        padding-left: 46px;
+        /* background: url("img/site-card.png"); */
+      }
+
+      ol h3::before {
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 30px;
+        left: 7px;
+        top: 1px;
+      }
+
+      ol h3.site-card::before {
+        background: no-repeat left/25px url("img/site-card.png");
+      }
+      ol h3.site-template::before {
+        background: no-repeat left/25px url("img/site-template.png");
+      }
+      ol .yes,
+      ol .no {
+        padding-left: 30px;
+      }
+      ol .yes::before,
+      ol .no::before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        left: 7px;
+        top: 3px;
+      }
+
+      ol .yes::before {
+        background: no-repeat left/17px url("img/yes.svg");
+      }
+      ol .no::before {
+        background: no-repeat left/17px url("img/no.svg");
+      }
+
+      .number-list {
+        counter-reset: li;
+        list-style: none;
+        font: 14px "Trebuchet MS", "Lucida Sans";
+        padding: 0;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+      }
+      .number-list h2,
+      h3,
+      a {
+        position: relative;
+        display: block;
+        padding: 0.4em 0.4em 0.4em 0.8em;
+        margin: 0.5em 0 0.5em 2.5em;
+        text-decoration: none;
+        transition: all 0.3s ease-out;
+      }
+
+      .number-list h2 {
+        background: #c7ccea;
+      }
+
+      .number-list h3 {
+        background: #e7eaf7;
+      }
+
+      .number-list a {
+        background: #dfe0e9;
+        color: #00538a;
+      }
+      .number-list a:visited {
+        color: #8a0000;
+      }
+      /* color: #8a0021; */
+
+      .number-list h2:hover,
+      .number-list a:hover,
+      .number-list h3:hover {
+        background: #dcdde1;
+      }
+      .number-list h2:before {
+        content: counter(li);
+        counter-increment: li;
+        position: absolute;
+        left: -2.5em;
+        top: 50%;
+        margin-top: -1em;
+        background: #00538a;
+        height: 2em;
+        width: 2em;
+        line-height: 2em;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+      }
+      .number-list h2:after,
+      .number-list a:after {
+        position: absolute;
+        content: "";
+        border: 0.5em solid transparent;
+        left: -1em;
+        top: 50%;
+        margin-top: -0.5em;
+        transition: all 0.3s ease-out;
+      }
+      .number-list a:hover:after {
+        left: -0.5em;
+        border-left-color: #9097a2;
+      }
+      .number-list .ready {
+        background: #e1e9df;
+      }
+      .number-list .no-ready {
+        background: #e9dfdf;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Основная страница для курса FR-1023 от Skillfactory</h1>
+    <ol class="number-list">
+      <li>
+        <h2>Веб-верстка</h2>
+        <ul>
+          <li>
+            <h3 class="site-card">Lab 1. Проект &#171;Сайт-визитка&#187;</h3>
+            <ul>
+              <li>
+                <a
+                  href="1_web_layout/pj_site-card/site-card-html"
+                  target="_blank"
+                  class="ready no"
+                  >&#171;Сайт-визитка&#187; + HTML
+                </a>
+              </li>
+              <li>
+                <a
+                  href="1_web_layout/pj_site-card/site-card-css"
+                  target="_blank"
+                  class="ready no"
+                  >&#171;Сайт-визитка&#187; + CSS
+                </a>
+              </li>
+              <li>
+                <a
+                  href="1_web_layout/pj_site-card/site-card-git"
+                  target="_blank"
+                  class="no-ready no"
+                  >&#171;Сайт-визитка&#187; + Git
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h3 class="site-template">
+              Lab 2. Проект &#171;Верстка лендинга по макету&#187;
+            </h3>
+            <ul>
+              <li>
+                <a
+                  href="1_web_layout/pj_layout-from-template"
+                  target="_blank"
+                  class="no-ready no"
+                >
+                  Проект &#171;Верстка лендинга по макету&#187;
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><h2>JavaScript</h2></li>
+    </ol>
+  </body>
+</html>
