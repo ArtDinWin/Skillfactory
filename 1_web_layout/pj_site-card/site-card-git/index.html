@@ -4,24 +4,316 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Страница еще не существует!</title>
+    <title>Сайт-визитка начинающего Frontend-разработчика</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+      @font-face {
+        src: url("/fonts/Vollkorn-SemiBold.ttf");
+        font-family: Vollkorn;
+      }
+
       body {
-        padding: 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 15px;
-        color: #00538a;
-        margin: 30px;
-        text-align: center;
+        margin: 0;
+        font-family: Inter, "Open Sans";
+        font-size: 16px;
+        line-height: 1.4em;
+        background-color: #ebf7ff;
+      }
+
+      main,
+      footer {
+        padding: 0 60px 60px;
+      }
+      footer h2 {
+        border-top: 1px solid #000000;
+        padding-top: 10px;
+      }
+
+      main ul,
+      main ol {
+        padding: 0 18px;
+      }
+
+      nav {
+        position: fixed;
+        z-index: 100;
+        background-color: white;
+        width: 100%;
+      }
+      section {
+        padding-top: 55px;
+      }
+      #main {
+        padding-top: 100px;
+      }
+      hr {
+        margin: 0;
       }
       h1 {
-        /* display: inline-block; */
-        /* margin: 0 auto; */
+        font-size: 2.5rem;
+        margin: 0;
+        font-family: Vollkorn, sans;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 0;
+        font-family: Vollkorn, sans;
+      }
+
+      h2 ~ p,
+      nav li,
+      footer ul {
+        margin: 0;
+        padding: 0;
+        /* padding-left: 25px; */
+      }
+      nav li {
+        display: inline-block;
+        margin: 0 20px;
+      }
+
+      nav li,
+      footer li {
+        list-style-type: none;
+      }
+
+      li a {
+        color: #0135ac;
+        /* text-decoration: none; */
+      }
+      li a:hover {
+        color: #ac0101;
+      }
+
+      .profile-photo {
+        border-radius: 50%;
+        margin-right: 30px;
+        vertical-align: middle;
+        padding: 10px;
+        border: 2px solid #000000;
+        background-color: #00538a;
+      }
+      .main-info {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      h2 {
+        border-left: 5px solid #00538a;
+        padding-left: 20px;
+      }
+      footer li {
+        margin-bottom: 10px;
+      }
+      #main {
+        position: relative;
+        z-index: 1;
+      }
+
+      .profile-photo,
+      #main {
+        opacity: 0;
+        animation: ani 1.5s forwards;
+      }
+
+      section:not(#main) {
+        opacity: 0;
+        animation: ani 8.5s forwards;
+      }
+
+      @keyframes ani {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .wrap {
+        display: flex;
+      }
+      .item {
+        flex-basis: 33%;
+      }
+      .title-item {
+        border: 0;
+        position: relative;
+        padding-left: 30px;
+      }
+      .title-item::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .title-item.edu::before {
+        background: url("images/edu.svg") top left/ 100% auto no-repeat;
+      }
+      .title-item.job::before {
+        background: url("images/job.svg") top left/ 100% auto no-repeat;
+      }
+      .title-item.hobby::before {
+        background: url("images/hobby.svg") top left/ 100% auto no-repeat;
+      }
+      li img {
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+      .grid-wrapper {
+        display: inline-grid;
+        grid-template-columns: 1fr 0.8fr 0.8fr;
+        grid-template-rows: auto;
+        grid-gap: 50px;
       }
     </style>
   </head>
   <body>
-    <img src="../../../img/no.svg" alt="Ошибка" width="70" height="70" />
-    <h1>404. Страница еще не существует!</h1>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="#goal">Цель</a></li>
+          <li><a href="#education">Образование</a></li>
+          <li><a href="#job">Опыт работы</a></li>
+          <li><a href="#hobby">Хобби</a></li>
+          <li><a href="#way">Мой путь</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+        <hr />
+      </nav>
+    </header>
+
+    <main>
+      <section id="main">
+        <img
+          class="profile-photo"
+          src="images/profile-foto.jpg"
+          alt="Фото моего профиля"
+          width="200"
+        />
+
+        <div class="main-info">
+          <h1>Топоров Артем</h1>
+          <p>Начинающий Frontend-разработчик, графический дизайнер</p>
+        </div>
+      </section>
+      <section id="about">
+        <h2>Обо мне</h2>
+        <p>
+          Родился в г. Йошкар-Ола, республика Марий Эл. Имею высшее образование
+          в сфере
+          <i>информатики и вычислительной техники</i>, но не имею опыта работы в
+          программировании. Работал не по специальности в строительстве,
+          печатном издании, затем в сфере снабжения. Решил сменить направление
+          работы, повысить свою квалификацию и развивать профессиональные навыки
+          в области <strong>web-технологий</strong>.
+        </p>
+      </section>
+      <section id="goal">
+        <h2>Цель поступления на курс?</h2>
+        <p>
+          Получение достаточных <ins>знаний, навыков и практики</ins> для
+          успешного трудоустройства по специализации &#171;Junior
+          Frontend-разработчик&#187;
+        </p>
+      </section>
+      <div class="wrap">
+        <section id="education" class="item">
+          <h2 class="title-item edu">Образование</h2>
+          <ul>
+            <li>Высшее</li>
+            <li>
+              Факультет <i>&#171;Информатики и Вычислительной Техники&#187;</i>
+            </li>
+            <li>
+              Специальность
+              <i>&#171;Вычислительные машины, <br />комплексы и сети&#187;</i>
+            </li>
+          </ul>
+        </section>
+
+        <section id="job" class="item">
+          <h2 class="title-item job">Опыт работы</h2>
+          <ul>
+            <li>
+              Графический дизайн <br />(Photoshop, CorelDraw, Illustrator) - 1,5
+              года
+            </li>
+            <li>Верстка печатных изданий <br />(InDesign) - 1,5 года</li>
+            <li>
+              Участие в учебных проектах по web-разработке <br />(HTML5, CSS3,
+              JavaScript)
+            </li>
+          </ul>
+        </section>
+        <section id="hobby" class="item">
+          <h2 class="title-item hobby">Хобби</h2>
+          <ul>
+            <li>Футбол</li>
+            <li>Графический дизайн</li>
+            <li>Изучение web-технологий</li>
+            <li>Разработка сайтов</li>
+          </ul>
+        </section>
+      </div>
+      <section id="way">
+        <h2>Как я становился разработчиком?</h2>
+        <ol>
+          <li>
+            С мая 2017 по сентябрь 2018 год &#8212; работал графическим
+            дизайнером.
+          </li>
+          <li>
+            С 2017 по 2022 год (более 5-х лет) работая не по профилю, в качестве
+            хобби, самостоятельно изучал <strong>web-технологии</strong> и
+            разработку сайтов, принимал участие в марафонах и интенсивах.
+          </li>
+
+          <li>
+            В 2022 году, имея больше всего знаний в этом направлении, плюс
+            дополнительный опыт в графическом дизайне, и повлияли на мой выбор
+            специализации <strong>Frontend-разработки</strong>.
+          </li>
+        </ol>
+      </section>
+    </main>
+    <footer id="contacts">
+      <h2>Контакты</h2>
+      <ul class="grid-wrapper">
+        <li>
+          <img src="images/email.svg" alt="ico-email" width="24" height="24" />
+          <a
+            href="mailto:personal.pochta@yandex.ru"
+            title="Связаться со мной по email"
+          >
+            personal.pochta@yandex.ru
+          </a>
+        </li>
+        <li>
+          <img src="images/phone.svg" alt="ico-phone" width="24" height="24" />
+          <a href="tel:+79677068858" title="Связаться со мной по телефону">
+            +7-967-706-88-58
+          </a>
+        </li>
+
+        <li>
+          <img src="images/vk.svg" alt="ico-vkontakte" width="24" height="24" />
+          <a
+            href="https://vk.com/id501298737"
+            title="Связаться со мной в vk"
+            target="_blank"
+          >
+            ВKонтакте
+          </a>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>
